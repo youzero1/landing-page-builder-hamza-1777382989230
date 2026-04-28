@@ -1,3 +1,5 @@
+'use client';
+
 const plans = [
   {
     name: 'Starter',
@@ -12,6 +14,7 @@ const plans = [
     ],
     cta: 'Get Started Free',
     highlighted: false,
+    href: '#',
   },
   {
     name: 'Pro',
@@ -28,6 +31,7 @@ const plans = [
     ],
     cta: 'Start Free Trial',
     highlighted: true,
+    href: '/checkout',
   },
   {
     name: 'Enterprise',
@@ -44,6 +48,7 @@ const plans = [
     ],
     cta: 'Contact Sales',
     highlighted: false,
+    href: '#',
   },
 ];
 
@@ -104,7 +109,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href="#"
+                href={plan.href}
                 className={`mt-8 block rounded-lg px-4 py-3 text-center text-sm font-semibold transition ${
                   plan.highlighted
                     ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500'
